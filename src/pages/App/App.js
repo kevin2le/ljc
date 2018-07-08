@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
+import {
+    Switch,
+    Route,
+    // Redirect,
+} from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
+import AboutPage from '../AboutPage/AboutPage'
+import NavBar from '../../components/NavBar/NavBar';
 
 class App extends Component {
     constructor() {
@@ -11,7 +18,11 @@ class App extends Component {
     render() {
         return (
             <div>
-
+                <NavBar />
+                <Switch>
+                    <Route exact path='/' component={HomePage} />
+                    <Route exact path='/about' component={AboutPage} />
+                </Switch>
             </div>
         );
     }
